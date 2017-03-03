@@ -1,0 +1,27 @@
+{% extends "FrontBundle:Default:index.html.twig " %}
+{% block title %}Visites{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h1>Visites</h1>
+                <p>Llistat de visites:</p>
+                <table class="table table-hover">
+                <th>Data</th>
+                <th>tractament</th>
+                <th>Metge que atén</th>
+                <th>Pacient atés</th>
+                {% for visita in visites %}
+                <tr>
+                	<td>{{ visita.data|date("m/d/Y") }}</td>
+        			<td>{{ visita.tractamentsFk.tipus }}</td>
+                    <td>{{ visita.metgesFk.nom}}</td>
+                    <td>{{ visita.pacientsFk.nom}}, {{ visita.pacientsFk.cognom}} amb DNI: {{ visita.pacientsFk.dni }}</td>
+        		</tr>
+				{% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

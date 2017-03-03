@@ -1,0 +1,15 @@
+FrontBundle\Entity\Pacient:
+    type: entity
+    table: null
+    repositoryClass: FrontBundle\Repository\PacientRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dolencia:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

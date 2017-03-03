@@ -1,0 +1,34 @@
+{% extends "BackBundle:Default:index.html.twig " %}
+{% block title %}Visites{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h1>Visites</h1>
+                <p>Llistat de visites:</p>
+                <table class="table table-hover">
+                <th>Data</th>
+                <th>tractament</th>
+                <th>Metge que atén</th>
+                <th>Pacient atés</th>
+                <th>Editar</th>
+                <th>Eleminar</th>
+                {% for visita in visites %}
+                <tr>
+                	<td>{{ visita.data|date("m/d/Y") }}</td>
+        			<td>{{ visita.tractamentsFk.tipus }}</td>
+                    <td>{{ visita.metgesFk.nom}}</td>
+                    <td>{{ visita.pacientsFk.nom}}, {{ visita.pacientsFk.cognom}} amb DNI: {{ visita.pacientsFk.dni }}</td>
+                    <td><a href="{{ path('centre_medic_back_visites_edit',{'id':visita.id}) }}"><img src="{{ asset('img/edit.png') }}"  alt="Edit" height="32" width="32"> </img></a></td>
+                    <td><a href="{{ path('centre_medic_back_visites_delete',{'id':visita.id}) }}"><img src="{{ asset('img/delete.png') }}"   alt="Delete" height="32" width="32"> </img></a></td>
+        		</tr>
+				{% endfor %}
+				</table>
+            </div>
+             <div class="col-sm-12 col-lg-12 col-md-12">
+        <a href="{{ path('centre_medic_back_visites_new') }}" class="btn btn-info" role="button">Afegir Visita</a>
+    </div>
+        </div>
+    </div>
+{% endblock %}

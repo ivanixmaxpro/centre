@@ -1,0 +1,11 @@
+back:
+    resource: "@BackBundle/Resources/config/routing.yml"
+    prefix:   /back
+
+front:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /front
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,27 @@
+{% extends "FrontBundle:Default:index.html.twig " %}
+{% block title %}Pacients{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+	    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h1>Metges</h1>
+                <p>Llistat de metges:</p>
+                <table class="table table-hover">
+                <th>Nom</th>
+                <th>Cognom</th>
+                <th>Dni</th>
+                <th>Especialitat</th>
+                {% for metge in metges %}
+                <tr>
+                	<td>{{ metge.nom }}</td>
+                    <td>{{ metge.cognom }}</td>
+                    <td>{{ metge.dni|upper }}</td>
+                    <td>{{ metge.especialitat }}</td>
+        		</tr>
+				{% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

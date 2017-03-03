@@ -1,0 +1,15 @@
+centre_medic_front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+centre_medic_front_login:
+    path:     /login
+    defaults: { _controller: FrontBundle:Default:login }
+centre_medic_llista_pacients:
+    path:     /llista_pacients
+    defaults: { _controller: FrontBundle:Pacients:llistaPacients }
+centre_medic_llista_metges:
+    path:     /llista_metges
+    defaults: { _controller: FrontBundle:Metges:llistaMetges }
+centre_medic_llista_visites:
+    path:     /llista_visites
+    defaults: { _controller: FrontBundle:Visites:llistaVisites }

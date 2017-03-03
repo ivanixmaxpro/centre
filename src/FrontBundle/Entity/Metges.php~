@@ -1,0 +1,47 @@
+<?php
+
+namespace FrontBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Metges
+ *
+ * @ORM\Table(name="metges", indexes={@ORM\Index(name="dni", columns={"dni"})})
+ * @ORM\Entity
+ */
+class Metges
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=25, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cognom", type="string", length=25, nullable=false)
+     */
+    private $cognom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="especialitat", type="string", length=255, nullable=false)
+     */
+    private $especialitat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dni", type="string", length=25)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $dni;
+
+
+}
+

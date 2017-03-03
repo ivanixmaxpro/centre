@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="FrontBundle\Entity\Visites" table="visites">
+    <indexes>
+      <index name="id" columns="id"/>
+      <index name="tractaments_fk" columns="tractaments_fk"/>
+      <index name="pacients_fk" columns="pacients_fk"/>
+      <index name="metges_fk" columns="metges_fk"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="data" type="date" column="data" nullable="false"/>
+    <many-to-one field="tractamentsFk" target-entity="Tractaments" fetch="LAZY">
+      <join-columns>
+        <join-column name="tractaments_fk" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="pacientsFk" target-entity="Pacients" fetch="LAZY">
+      <join-columns>
+        <join-column name="pacients_fk" referenced-column-name="dni"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="metgesFk" target-entity="Metges" fetch="LAZY">
+      <join-columns>
+        <join-column name="metges_fk" referenced-column-name="dni"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

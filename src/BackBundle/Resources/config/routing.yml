@@ -1,0 +1,51 @@
+centre_medic_back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:index }
+centre_medic_back_pacients_new:
+    path:     /newPacient
+    defaults: { _controller: BackBundle:Pacients:new }
+centre_medic_back_pacients_view:
+    path:     /viewPacient/{dni}
+    defaults: { _controller: BackBundle:Pacients:view }
+centre_medic_back_pacients_edit:
+    path:     /editPacient/{dni}    
+    defaults: { _controller: BackBundle:Pacients:edit }
+centre_medic_back_pacients_delete:
+    path:     /deletePacient/{dni}
+    defaults: { _controller: BackBundle:Pacients:delete }
+
+centre_medic_back_metges_new:
+    path:     /newMetge
+    defaults: { _controller: BackBundle:Metges:new }
+centre_medic_back_metges_view:
+    path:     /viewMetge/{dni}
+    defaults: { _controller: BackBundle:Metges:view }
+centre_medic_back_metges_edit:
+    path:     /editMetge/{dni}    
+    defaults: { _controller: BackBundle:Metges:edit }
+centre_medic_back_metges_delete:
+    path:     /deleteMetge/{dni}
+    defaults: { _controller: BackBundle:Metges:delete }
+
+centre_medic_back_visites_new:
+    path:     /newVisita
+    defaults: { _controller: BackBundle:Visites:new }
+centre_medic_back_visites_view:
+    path:     /viewVisita/{id}
+    defaults: { _controller: BackBundle:Visites:view }
+centre_medic_back_visites_edit:
+    path:     /editVisita/{id}    
+    defaults: { _controller: BackBundle:Visites:edit }
+centre_medic_back_visites_delete:
+    path:     /deleteVisita/{id}
+    defaults: { _controller: BackBundle:Visites:delete }
+
+centre_medic_llista_back_pacients:
+    path:     /llista_pacients
+    defaults: { _controller: BackBundle:Pacients:llistaPacients }
+centre_medic_llista_back_metges:
+    path:     /llista_metges
+    defaults: { _controller: BackBundle:Metges:llistaMetges }
+centre_medic_llista_back_visites:
+    path:     /llista_visites
+    defaults: { _controller: BackBundle:Visites:llistaVisites }

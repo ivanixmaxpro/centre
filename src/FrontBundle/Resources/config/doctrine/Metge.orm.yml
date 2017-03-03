@@ -1,0 +1,15 @@
+FrontBundle\Entity\Metge:
+    type: entity
+    table: null
+    repositoryClass: FrontBundle\Repository\MetgeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        especialitat:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

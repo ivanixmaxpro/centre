@@ -1,0 +1,27 @@
+{% extends "FrontBundle:Default:index.html.twig " %}
+{% block title %}Pacients{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+	    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h1>Pacients</h1>
+                <p>Llistat de pacients:</p>
+                <table class="table table-hover">
+                <th>nom</th>
+                <th>cognom</th>
+                <th>dni</th>
+                <th>Dolencia</th>
+                {% for pacient in pacients %}
+                <tr>
+                	<td>{{ pacient.nom }}</td>
+                    <td>{{ pacient.cognom }}</td>
+                    <td>{{ pacient.dni|upper }}</td>
+        			<td>{{ pacient.dolencia }}</td>
+        		</tr>
+				{% endfor %}
+				</table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

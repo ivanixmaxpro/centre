@@ -1,0 +1,19 @@
+FrontBundle\Entity\CentreMedic:
+    type: entity
+    table: null
+    repositoryClass: FrontBundle\Repository\CentreMedicRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        codi:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }
